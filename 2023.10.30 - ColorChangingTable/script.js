@@ -1,7 +1,7 @@
 
 grid_generation_HTML_Code = "";
-grid_size_row = 5;                // Nombre de lignes
-grid_size_col = 5;                // Nombre de colonnes
+grid_size_row = 20;                // Nombre de lignes
+grid_size_col = 20;                // Nombre de colonnes
 
 
 // Fonction qui génère un tableau 
