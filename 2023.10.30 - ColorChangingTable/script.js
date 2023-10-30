@@ -1,7 +1,8 @@
 
 grid_generation_HTML_Code = "";
-grid_size_row = 20;                // Nombre de lignes
-grid_size_col = 20;                // Nombre de colonnes
+grid_size_row = 30;                // Nombre de lignes
+grid_size_col = 30;                // Nombre de colonnes
+nbOfColors = 2; 
 
 
 // Fonction qui génère un tableau 
@@ -29,13 +30,26 @@ function Generate_Grid(){
 
 }
 
+// Génère une valeur aléatoire entre 0 et 255
+function generateRandomRGBValue(){
+    return `${Math.ceil(Math.random() * 255)}`;
+}
 
 // Génération d'un tableau dans la table .gridContainer
 document.querySelector(".gridContainer").innerHTML = Generate_Grid();
 
 
 
-function getColorforEachInterval (initR, initG, initB, targR, targG, targB) {
+function getColorforEachInterval () {
+
+    initR = generateRandomRGBValue();
+    initG = generateRandomRGBValue();
+    initB = generateRandomRGBValue();
+
+    targR = generateRandomRGBValue();
+    targG = generateRandomRGBValue();
+    targB = generateRandomRGBValue();
+
     // Calcul de l'intervale nécessaire pour chaque couleur (R, G, B)
     intervalR = ((targR - initR) / ((grid_size_col*grid_size_row)-1));
     intervalG = ((targG - initG) / ((grid_size_col*grid_size_row)-1));
@@ -62,10 +76,6 @@ function getColorforEachInterval (initR, initG, initB, targR, targG, targB) {
 }
 
 
-// Génère une valeur aléatoire entre 0 et 255
-function generateRandomRGBValue(){
-    return `${Math.ceil(Math.random() * 255)}`;
-}
 
 
-getColorforEachInterval(generateRandomRGBValue(),generateRandomRGBValue(),generateRandomRGBValue(),generateRandomRGBValue(),generateRandomRGBValue(),generateRandomRGBValue())
+getColorforEachInterval()
